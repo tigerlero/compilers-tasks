@@ -1,0 +1,25 @@
+First(S) = {[}
+First(A) = {x,y,[}
+First(B) = {x,y,[}
+First(E) = {:,+,e}
+
+Follow(S) = {:,+,],$}
+Follow(A) = {]}
+Follow(B) = {:,+,]}
+Follow(E) = {]}
+
+LookAhead(S->[A]) = {[}
+LookAhead(A->BE) = {x,y,[}
+LookAhead(B->x) = {x}
+LookAhead(B->y) = {y}
+LookAhead(B->S) = {[}
+LookAhead(E->:A) = {:}
+LookAhead(E->+A) = {+}
+LookAhead(E->e) = {]}
+
+
+Για κάθε ζεύγος διαφορετικών παραγωγών X->w και X->z ισχύει LookAhead(X->w) τομή LookAhead(X->z) != Κενό.
+
+Aρα η γραμματική είναι LL(1).
+
+Αυτό φαίνεται και από τον συντακτικό πίνακα της γραμματικής (table.png), ο οποίος δεν έχει επικαλυψεις.

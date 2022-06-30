@@ -1,0 +1,3 @@
+var ant_, hi1: integer;
+cell_barbeque, s1o2n3a4r5: char;
+division_3: boolean;
